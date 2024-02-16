@@ -22,7 +22,7 @@
   },
   "include": [
     "src",
-    "src/types/svg.d.ts"
+    "src/types/images.d.ts"
   ],
   
   "extends": "./tsconfig.paths.json",

@@ -1,16 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
 import Navbar from "./components/Navbar";
 
 const Layout: React.FC = () => {
   return (
     <React.Fragment>
-      <Navbar />
       <Container>
-        <main>
+        <Navbar />
+        <Content>
           <Outlet />
-        </main>
+        </Content>
       </Container>
     </React.Fragment>
   );

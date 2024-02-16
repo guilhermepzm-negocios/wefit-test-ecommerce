@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  Container,
+  SpinContainer,
+  LoadingIndicator,
+  CardsContainer,
+} from "./styles";
+import { ApplicationState } from "~/store/types";
+import { listMoviesRequest } from "~/store/redux/movies/actions";
+import MovieCard from "~/components/MovieCard";
 const Home: React.FC = () => {
+  const dispatch = useDispatch();
+  const movies = useSelector((state: ApplicationState) => state.movies.data);
+  const loading = useSelector(
+    (state: ApplicationState) => state.movies.loading
+  );
+
+  useEffect(() => {
+    dispatch(listMoviesRequest());
+  }, []);
+
   return (
-    <div>
-      <p>aaaaaaaaaaa</p>
-      <p>bbbbbbbbb</p>
-      <p>cccccccccc</p>
-    </div>
+    <Container>
+      {loading ? (
+        <SpinContainer>
+          <LoadingIndicator />
+        </SpinContainer>
+      ) : (
+        <CardsContainer>
+          {movies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
+        </CardsContainer>
+      )}
+    </Container>
   );
 };
 
