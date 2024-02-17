@@ -18,7 +18,7 @@ export const LoadingIndicator = styled.img.attrs({
 })`
   width: 5.1875rem;
   height: 5.1875rem;
-  animation: rotation 1.25s infinite linear;
+  animation: rotation 1.5s infinite linear;
   pointer-events: none;
   @keyframes rotation {
     from {
