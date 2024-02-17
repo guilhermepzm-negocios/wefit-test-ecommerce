@@ -7,12 +7,18 @@ export const Container = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  @media only screen and (max-width: 768px) {
+    height: calc(100% - 1rem);
+  }
 `;
 
 export const Header = styled.div`
   display: flex;
   flex-direction: row;
   padding: 1.5rem;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const HeaderItem = styled.div`
@@ -42,6 +48,9 @@ export const Bottom = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 export const PriceTitle = styled.div`
@@ -56,6 +65,10 @@ export const Row = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 1.5rem;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    justify-content: flex-end;
+  }
 `;
 
 export const Price = styled.div`
@@ -69,6 +82,10 @@ export const CustomButtonRoot = styled(CustomButton.Root)`
   width: 11.25rem;
   height: 2.5rem;
   font-size: 0.875rem;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    margin-top: 1rem;
+  }
 `;
 
 export const List = styled.div`
@@ -76,6 +93,11 @@ export const List = styled.div`
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   height: 100%;
+  @media only screen and (max-width: 768px) {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 `;
 
 export const Fixed = styled.div`

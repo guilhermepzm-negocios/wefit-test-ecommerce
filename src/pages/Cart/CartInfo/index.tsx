@@ -13,11 +13,11 @@ import {
   PriceTitle,
   Row,
 } from "./styles";
-import CartItem from "./CartItem";
+import CartItemContainer from "./CartItemContainer";
 import { useDispatch } from "react-redux";
 import { finishOrderCartRequest } from "~/store/redux/cart/actions";
 import { useNavigate } from "react-router-dom";
-import { CustomButtonRoot } from "../styles";
+import { CustomButtonRoot } from "./styles";
 import { CustomButton } from "~/components/CustomButton";
 
 interface Props {
@@ -48,7 +48,7 @@ const CartInfo: React.FC<Props> = ({ cart }: Props) => {
       </Header>
       <List>
         {items.map((item) => (
-          <CartItem key={item.movie.id} item={item} />
+          <CartItemContainer key={item.movie.id} item={item} />
         ))}
       </List>
       <Fixed>

@@ -33,7 +33,6 @@ export const CartContainer = styled.div`
 export const CartTitle = styled.div`
   font-weight: ${({ theme }) => theme.weight.semiBold};
   font-size: 0.875rem;
-  display: block;
   @media only screen and (max-width: 768px) {
     display: none;
   }
