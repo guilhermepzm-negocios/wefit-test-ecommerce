@@ -29,7 +29,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-app-rewired start"
+    "start": "react-app-rewired start",
+    "start-api": "npx json-server -p  4000 db.json"
   },
   "eslintConfig": {
     "extends": [
