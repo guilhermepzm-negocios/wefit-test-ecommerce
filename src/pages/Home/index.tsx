@@ -18,7 +18,7 @@ const Home: React.FC = () => {
   );
 
   useEffect(() => {
-    dispatch(listMoviesRequest());
+    if (movies.length === 0) dispatch(listMoviesRequest());
   }, []);
 
   return (
