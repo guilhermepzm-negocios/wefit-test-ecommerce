@@ -5,6 +5,7 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
+  text-align: center;
   height: 100%;
   justify-content: space-around;
   background-color: ${({ theme }) => theme.colors.white};
@@ -14,9 +15,17 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (max-width: 768px) {
+    height: calc(100% - 1rem);
+  }
 `;
 
 export const Title = styled.div`
   font-size: 1.25rem;
   font-weight: ${({ theme }) => theme.weight.bold};
+  @media only screen and (max-width: 768px) {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
 `;

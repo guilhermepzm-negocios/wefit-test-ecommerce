@@ -36,4 +36,7 @@ export const CardsContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   gap: 1rem;
+  @media only screen and (max-width: 768px) {
+    padding-bottom: 1rem;
+  }
 `;

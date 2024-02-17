@@ -11,6 +11,9 @@ export const DefaultCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+  }
 `;
 
 export const Image = styled.img`
