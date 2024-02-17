@@ -24,14 +24,14 @@ export const Image = styled.img`
 `;
 
 export const Title = styled.div`
-  font-size: 0.75rem;
+  font-size: ${({ theme }) => theme.fontSize.xSmall};
   font-weight: ${({ theme }) => theme.weight.bold};
   padding-bottom: 0.125rem;
   color: ${({ theme }) => theme.colors.darkGrey};
 `;
 
 export const Subtitle = styled.div`
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.fontSize.medium};
   font-weight: ${({ theme }) => theme.weight.bold};
   padding-bottom: 0.5rem;
   color: ${({ theme }) => theme.colors.primary};
@@ -47,7 +47,7 @@ export const CustomButtonRoot = styled(CustomButton.Root)<ButtonProps>`
   color: ${({ theme }) => theme.colors.white};
   width: 100%;
   height: 2.5rem;
-  font-size: 0.75rem;
+  font-size: ${({ theme }) => theme.fontSize.xSmall};
   &:hover {
     background-color: ${(prop) =>
       prop.$hasInCart

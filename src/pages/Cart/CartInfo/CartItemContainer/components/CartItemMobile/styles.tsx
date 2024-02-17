@@ -28,7 +28,7 @@ export const Row = styled.div`
 
 export const PriceTitle = styled.div`
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: ${({ theme }) => theme.fontSize.xSmall};
   font-weight: ${({ theme }) => theme.weight.bold};
   color: ${({ theme }) => theme.colors.grey};
 `;
@@ -40,12 +40,12 @@ export const Image = styled.img`
 `;
 
 export const Title = styled.div`
-  font-size: 0.875rem;
+  font-size: ${({ theme }) => theme.fontSize.small};
   font-weight: ${({ theme }) => theme.weight.bold};
   flex: 1;
 `;
 
 export const Price = styled.div`
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.fontSize.medium};
   font-weight: ${({ theme }) => theme.weight.bold};
 `;

@@ -19,7 +19,7 @@ export const Container = styled.div`
 
 export const Title = styled.div`
   cursor: pointer;
-  font-size: 1.25rem;
+  font-size: ${({ theme }) => theme.fontSize.large};
   font-weight: ${({ theme }) => theme.weight.bold};
 `;
 
@@ -32,7 +32,7 @@ export const CartContainer = styled.div`
 
 export const CartTitle = styled.div`
   font-weight: ${({ theme }) => theme.weight.semiBold};
-  font-size: 0.875rem;
+  font-size: ${({ theme }) => theme.fontSize.small};
   @media only screen and (max-width: 768px) {
     display: none;
   }
@@ -41,7 +41,7 @@ export const CartTitle = styled.div`
 export const CartSubtitle = styled.div`
   color: ${({ theme }) => theme.colors.grey};
   font-weight: ${({ theme }) => theme.weight.semiBold};
-  font-size: 0.75rem;
+  font-size: ${({ theme }) => theme.fontSize.xSmall};
 `;
 
 export const CartInfoContainer = styled.div`

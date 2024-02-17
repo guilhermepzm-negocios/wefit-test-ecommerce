@@ -22,7 +22,7 @@ export const Content = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 1.25rem;
+  font-size: ${({ theme }) => theme.fontSize.large};
   font-weight: ${({ theme }) => theme.weight.bold};
   @media only screen and (max-width: 768px) {
     padding-left: 5rem;

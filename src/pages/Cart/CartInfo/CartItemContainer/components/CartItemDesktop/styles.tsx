@@ -36,12 +36,12 @@ export const Image = styled.img`
 `;
 
 export const Title = styled.div`
-  font-size: 0.875rem;
+  font-size: ${({ theme }) => theme.fontSize.small};
   font-weight: ${({ theme }) => theme.weight.bold};
   margin-bottom: 0.5rem;
 `;
 
 export const Price = styled.div`
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.fontSize.medium};
   font-weight: ${({ theme }) => theme.weight.bold};
 `;

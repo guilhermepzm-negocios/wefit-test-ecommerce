@@ -10,5 +10,5 @@ export const EmptyImage = styled(EmptyCart)`
 export const CustomButtonRoot = styled(CustomButton.Root)`
   width: 11.25rem;
   height: 2.5rem;
-  font-size: 0.875rem;
+  font-size: ${({ theme }) => theme.fontSize.small};
 `;

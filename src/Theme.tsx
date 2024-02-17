@@ -13,4 +13,11 @@ export const theme: DefaultTheme = {
     semiBold: 600,
     regular: 400,
   },
+  fontSize: {
+    xSmall: "0.75rem",
+    small: "0.875rem",
+    medium: "1rem",
+    large: "1.125rem",
+    xLarge: "1.5rem",
+  },
 };

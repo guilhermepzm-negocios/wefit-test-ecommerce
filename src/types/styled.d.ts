@@ -10,6 +10,13 @@ declare module "styled-components" {
       darkGrey: string;
       green: string;
     };
+    fontSize: {
+      xSmall: string;
+      small: string;
+      medium: string;
+      large: string;
+      xLarge: string;
+    };
     weight: {
       bold: number;
       semiBold: number;

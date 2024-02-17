@@ -23,7 +23,7 @@ export const Header = styled.div`
 
 export const HeaderItem = styled.div`
   text-transform: uppercase;
-  font-size: 0.875rem;
+  font-size: ${({ theme }) => theme.fontSize.small};
   font-weight: ${({ theme }) => theme.weight.bold};
   color: ${({ theme }) => theme.colors.grey};
 `;
@@ -54,7 +54,7 @@ export const Bottom = styled.div`
 `;
 
 export const PriceTitle = styled.div`
-  font-size: 0.875rem;
+  font-size: ${({ theme }) => theme.fontSize.small};
   font-weight: ${({ theme }) => theme.weight.bold};
   color: ${({ theme }) => theme.colors.grey};
   text-transform: uppercase;
@@ -72,7 +72,7 @@ export const Row = styled.div`
 `;
 
 export const Price = styled.div`
-  font-size: 1.5rem;
+  font-size: ${({ theme }) => theme.fontSize.xLarge};
   font-weight: ${({ theme }) => theme.weight.bold};
   color: ${({ theme }) => theme.colors.primary};
   margin-right: 1rem;
@@ -81,7 +81,7 @@ export const Price = styled.div`
 export const CustomButtonRoot = styled(CustomButton.Root)`
   width: 11.25rem;
   height: 2.5rem;
-  font-size: 0.875rem;
+  font-size: ${({ theme }) => theme.fontSize.small};
   @media only screen and (max-width: 768px) {
     width: 100%;
     margin-top: 1rem;
