@@ -2,12 +2,13 @@ import React, { useCallback, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { ApplicationState } from "~/store/types";
 import { EmptyImage, CustomButtonRoot } from "./styles";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import CartInfo from "./CartInfo";
 import { CustomButton } from "~/components/CustomButton";
 import { DefaultNavigationPage } from "~/components/DefaultNavigationPage";
 
 const Cart: React.FC = () => {
+  const { scrollRefId } = useParams();
   const navigate = useNavigate();
   const cart = useSelector((state: ApplicationState) => state.cart.data);
 
@@ -32,7 +33,7 @@ const Cart: React.FC = () => {
           />
         </DefaultNavigationPage.Root>
       ) : (
-        <CartInfo cart={cart} />
+        <CartInfo scrollRefId={scrollRefId} cart={cart} />
       )}
     </React.Fragment>
   );

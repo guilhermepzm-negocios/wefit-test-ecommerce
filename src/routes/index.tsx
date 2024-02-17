@@ -12,6 +12,7 @@ const RootRoutes: React.FC = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="cart/:scrollRefId" element={<Cart />} />
         <Route path="order" element={<Order />} />
         <Route path="*" element={<NotFound />} />
       </Route>

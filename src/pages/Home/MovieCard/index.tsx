@@ -28,8 +28,8 @@ const MovieCard: React.FC<Props> = ({ movie }: Props) => {
   );
 
   const handleNavigate = useCallback(() => {
-    navigate("/cart");
-  }, []);
+    navigate(`/cart/${id}`);
+  }, [navigate, id]);
 
   const hasInCart = useMemo(() => {
     return !!cartItemDetails;

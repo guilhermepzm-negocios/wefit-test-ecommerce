@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { CartModel } from "~/models/CartModel";
 import {
   Bottom,
@@ -22,12 +22,29 @@ import { CustomButton } from "~/components/CustomButton";
 
 interface Props {
   cart: CartModel;
+  scrollRefId?: string;
 }
 
-const CartInfo: React.FC<Props> = ({ cart }: Props) => {
+const CartInfo: React.FC<Props> = ({ cart, scrollRefId }: Props) => {
   const { items, total } = cart;
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const refs: { [key: string]: React.RefObject<HTMLDivElement> } =
+    items.reduce<{ [key: string]: React.RefObject<HTMLDivElement> }>(
+      (acc, value) => {
+        acc[value.movie.id] = React.createRef<HTMLDivElement>();
+        return acc;
+      },
+      {}
+    );
+
+  useEffect(() => {
+    if (scrollRefId)
+      refs[scrollRefId].current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+  }, [scrollRefId]);
 
   const maskedTotalPrice = new Intl.NumberFormat("pt-BR", {
     style: "currency",
@@ -48,7 +65,9 @@ const CartInfo: React.FC<Props> = ({ cart }: Props) => {
       </Header>
       <List>
         {items.map((item) => (
-          <CartItemContainer key={item.movie.id} item={item} />
+          <div ref={refs[item.movie.id]} key={item.movie.id}>
+            <CartItemContainer item={item} />
+          </div>
         ))}
       </List>
       <Fixed>
