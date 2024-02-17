@@ -12,6 +12,7 @@ export const Container = styled.div`
   }
   display: flex;
   flex-direction: column;
+  padding-bottom: 4.75rem;
 `;
 
 export const Content = styled.main`

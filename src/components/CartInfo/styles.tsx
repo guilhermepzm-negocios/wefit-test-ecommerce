@@ -4,12 +4,15 @@ import { Button as antdButton } from "antd";
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 0.25rem;
-  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Header = styled.div`
   display: flex;
   flex-direction: row;
+  padding: 1.5rem;
 `;
 
 export const HeaderItem = styled.div`
@@ -31,7 +34,6 @@ export const Line = styled.div`
   height: 1px;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.grey};
-  margin-top: 1.3125rem;
   margin-bottom: 1.3125rem;
 `;
 
@@ -76,4 +78,19 @@ export const Button = styled(antdButton)`
     background-color: ${({ theme }) => theme.colors.secondary} !important;
     color: ${({ theme }) => theme.colors.white} !important;
   }
+`;
+
+export const List = styled.div`
+  overflow: scroll;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  height: 100%;
+`;
+
+export const Fixed = styled.div`
+  background-color: white;
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-right: 1.5rem;
 `;

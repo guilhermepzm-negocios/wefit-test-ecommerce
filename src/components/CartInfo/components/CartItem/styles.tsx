@@ -9,7 +9,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 1.3125rem;
+  margin-bottom: 1.3125rem;
   color: ${({ theme }) => theme.colors.primary};
 `;
 

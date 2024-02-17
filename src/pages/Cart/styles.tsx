@@ -7,13 +7,15 @@ export const Container = styled.div`
 `;
 
 export const EmptyContainer = styled.div`
+  height: 100%;
   background-color: ${({ theme }) => theme.colors.white};
   border-radius: 0.25rem;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 `;
 
 export const Title = styled.div`

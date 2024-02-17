@@ -4,10 +4,12 @@ import {
   Bottom,
   Button,
   Container,
+  Fixed,
   Header,
   HeaderItemLg,
   HeaderItemSm,
   Line,
+  List,
   Price,
   PriceTitle,
   Row,
@@ -43,17 +45,21 @@ const CartInfo: React.FC<Props> = ({ cart }: Props) => {
         <HeaderItemSm>Qtd</HeaderItemSm>
         <HeaderItemSm>Subtotal</HeaderItemSm>
       </Header>
-      {items.map((item) => (
-        <CartItem key={item.movie.id} item={item} />
-      ))}
-      <Line />
-      <Bottom>
-        <Button onClick={handleFinishOrder}>Finalizar pedido</Button>
-        <Row>
-          <PriceTitle>total</PriceTitle>
-          <Price>{maskedTotalPrice}</Price>
-        </Row>
-      </Bottom>
+      <List>
+        {items.map((item) => (
+          <CartItem key={item.movie.id} item={item} />
+        ))}
+      </List>
+      <Fixed>
+        <Line />
+        <Bottom>
+          <Button onClick={handleFinishOrder}>Finalizar pedido</Button>
+          <Row>
+            <PriceTitle>total</PriceTitle>
+            <Price>{maskedTotalPrice}</Price>
+          </Row>
+        </Bottom>
+      </Fixed>
     </Container>
   );
 };
