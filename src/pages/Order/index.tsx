@@ -1,13 +1,8 @@
 import React, { useCallback } from "react";
-import {
-  Container,
-  Content,
-  Title,
-  CustomButtonRoot,
-  OrderImage,
-} from "./styles";
+import { CustomButtonRoot, OrderImage } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { CustomButton } from "~/components/CustomButton";
+import { DefaultNavigationPage } from "~/components/DefaultNavigationPage";
 
 const Order: React.FC = () => {
   const navigate = useNavigate();
@@ -17,15 +12,17 @@ const Order: React.FC = () => {
   }, []);
 
   return (
-    <Container>
-      <Content>
-        <Title>Compra realizada com sucesso!</Title>
-        <OrderImage />
-        <CustomButtonRoot onClick={handleNavigate}>
-          <CustomButton.Content text="Voltar" />
-        </CustomButtonRoot>
-      </Content>
-    </Container>
+    <DefaultNavigationPage.Root>
+      <DefaultNavigationPage.Title text="Compra realizada com sucesso!" />
+      <DefaultNavigationPage.Image icon={OrderImage} />
+      <DefaultNavigationPage.Button
+        button={
+          <CustomButtonRoot onClick={handleNavigate}>
+            <CustomButton.Content text="Voltar" />
+          </CustomButtonRoot>
+        }
+      />
+    </DefaultNavigationPage.Root>
   );
 };
 

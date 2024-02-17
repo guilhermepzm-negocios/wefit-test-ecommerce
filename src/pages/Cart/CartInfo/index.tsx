@@ -13,7 +13,7 @@ import {
   PriceTitle,
   Row,
 } from "./styles";
-import CartItem from "./components/CartItem";
+import CartItem from "./CartItem";
 import { useDispatch } from "react-redux";
 import { finishOrderCartRequest } from "~/store/redux/cart/actions";
 import { useNavigate } from "react-router-dom";
