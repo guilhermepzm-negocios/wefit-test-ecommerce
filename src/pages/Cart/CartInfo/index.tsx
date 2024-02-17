@@ -40,7 +40,7 @@ const CartInfo: React.FC<Props> = ({ cart, scrollRefId }: Props) => {
 
   useEffect(() => {
     if (scrollRefId)
-      refs[scrollRefId].current?.scrollIntoView({
+      refs[scrollRefId]?.current?.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
