@@ -5,7 +5,7 @@ export const DefaultCard = styled.div`
   flex: 0 0 calc(33.333333% - 1rem);
   height: 19.0625rem;
   border-radius: 0.25rem;
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.white};
   padding: 0.625rem;
   display: flex;
   flex-direction: column;

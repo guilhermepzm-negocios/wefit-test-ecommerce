@@ -101,7 +101,7 @@ export const List = styled.div`
 `;
 
 export const Fixed = styled.div`
-  background-color: white;
+  background-color: ${({ theme }) => theme.colors.white};
   width: 100%;
   padding-left: 1.5rem;
   padding-bottom: 1.5rem;
