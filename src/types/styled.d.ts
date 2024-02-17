@@ -7,6 +7,7 @@ declare module "styled-components" {
       secondary: string;
       white: string;
       grey: string;
+      darkGrey: string;
       green: string;
     };
     weight: {

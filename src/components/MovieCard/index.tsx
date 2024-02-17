@@ -5,6 +5,7 @@ import { ReactComponent as CartIcon } from "~/assets/svg/icons/cart-2.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItemRequest } from "~/store/redux/cart/actions";
 import { ApplicationState } from "~/store/types";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   movie: MovieModel;
@@ -13,10 +14,15 @@ interface Props {
 const MovieCard: React.FC<Props> = ({ movie }: Props) => {
   const { id, image, price, title } = movie;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const cartItemDetails = useSelector((state: ApplicationState) =>
     state.cart.data.items.find((item) => item.movie.id === id)
   );
+
+  const handleNavigate = useCallback(() => {
+    navigate("/cart");
+  }, []);
 
   const hasInCart = useMemo(() => {
     return !!cartItemDetails;
@@ -46,7 +52,7 @@ const MovieCard: React.FC<Props> = ({ movie }: Props) => {
       <Subtitle>{maskedPrice}</Subtitle>
       <Button
         $hasInCart={hasInCart}
-        onClick={hasInCart ? undefined : handleSelect}
+        onClick={hasInCart ? handleNavigate : handleSelect}
       >
         <CartIcon /> <Count>{cartItemQuantity}</Count> {buttonText}
       </Button>

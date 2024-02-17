@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import {
   CartContainer,
   CartInfoContainer,
@@ -10,18 +10,23 @@ import {
 import { ReactComponent as CartIcon } from "~/assets/svg/icons/cart-1.svg";
 import { useSelector } from "react-redux";
 import { ApplicationState } from "~/store/types";
+import { useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
-  const cartLength = useSelector(
-    (state: ApplicationState) => state.cart.data.items.length
+  const navigate = useNavigate();
+  const cartQuantity = useSelector((state: ApplicationState) =>
+    state.cart.data.items.reduce((acc, item) => acc + item.quantity, 0)
   );
+  const handleNavigate = useCallback((path: string) => {
+    navigate(path);
+  }, []);
   return (
     <Container>
-      <Title>WeMovies</Title>
-      <CartContainer>
+      <Title onClick={() => handleNavigate("/")}>WeMovies</Title>
+      <CartContainer onClick={() => handleNavigate("/cart")}>
         <CartInfoContainer>
           <CartTitle>Meu Carrinho</CartTitle>
-          <CartSubtitle>{cartLength} itens</CartSubtitle>
+          <CartSubtitle>{cartQuantity} itens</CartSubtitle>
         </CartInfoContainer>
         <CartIcon />
       </CartContainer>

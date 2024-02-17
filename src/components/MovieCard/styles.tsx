@@ -24,12 +24,14 @@ export const Title = styled.div`
   font-size: 0.75rem;
   font-weight: ${({ theme }) => theme.weight.bold};
   padding-bottom: 0.125rem;
+  color: ${({ theme }) => theme.colors.darkGrey};
 `;
 
 export const Subtitle = styled.div`
   font-size: 1rem;
   font-weight: ${({ theme }) => theme.weight.bold};
   padding-bottom: 0.5rem;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 interface ButtonProps {

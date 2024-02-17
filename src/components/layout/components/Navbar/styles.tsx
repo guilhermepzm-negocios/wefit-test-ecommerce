@@ -9,10 +9,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   color: ${({ theme }) => theme.colors.white};
-  /* background-color: ${({ theme }) => theme.colors.primary}; */
 `;
 
 export const Title = styled.div`
+  cursor: pointer;
   font-size: 1.25rem;
   font-weight: ${({ theme }) => theme.weight.bold};
 `;
@@ -21,6 +21,7 @@ export const CartContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const CartTitle = styled.div`

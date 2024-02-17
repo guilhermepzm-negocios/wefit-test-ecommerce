@@ -5,6 +5,7 @@ export const theme: DefaultTheme = {
     secondary: "#009EDD",
     white: "#fff",
     grey: "#999",
+    darkGrey: "#333",
     green: "#039B00",
   },
   weight: {
