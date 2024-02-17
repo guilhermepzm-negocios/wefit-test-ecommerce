@@ -8,7 +8,8 @@ import {
 } from "./styles";
 import { ApplicationState } from "~/store/types";
 import { listMoviesRequest } from "~/store/redux/movies/actions";
-import MovieCard from "~/components/MovieCard";
+import MovieCard from "./MovieCard";
+
 const Home: React.FC = () => {
   const dispatch = useDispatch();
   const movies = useSelector((state: ApplicationState) => state.movies.data);

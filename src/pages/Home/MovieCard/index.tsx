@@ -1,11 +1,18 @@
 import React, { useCallback, useMemo } from "react";
-import { Button, DefaultCard, Image, Count, Title, Subtitle } from "./styles";
+import {
+  CustomButtonRoot,
+  DefaultCard,
+  Image,
+  Title,
+  Subtitle,
+} from "./styles";
 import { MovieModel } from "~/models/MovieModel";
 import { ReactComponent as CartIcon } from "~/assets/svg/icons/cart-2.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItemRequest } from "~/store/redux/cart/actions";
 import { ApplicationState } from "~/store/types";
 import { useNavigate } from "react-router-dom";
+import { CustomButton } from "~/components/CustomButton";
 
 interface Props {
   movie: MovieModel;
@@ -50,12 +57,14 @@ const MovieCard: React.FC<Props> = ({ movie }: Props) => {
       <Image src={image} alt={title} />
       <Title>{title}</Title>
       <Subtitle>{maskedPrice}</Subtitle>
-      <Button
+      <CustomButtonRoot
         $hasInCart={hasInCart}
         onClick={hasInCart ? handleNavigate : handleSelect}
       >
-        <CartIcon /> <Count>{cartItemQuantity}</Count> {buttonText}
-      </Button>
+        <CustomButton.Icon icon={CartIcon} />
+        <CustomButton.IconCount count={cartItemQuantity} />
+        <CustomButton.Content text={buttonText} />
+      </CustomButtonRoot>
     </DefaultCard>
   );
 };

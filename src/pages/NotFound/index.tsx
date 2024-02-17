@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
-import { Container, Content, Title, Button, Image } from "./styles";
+import { Container, Content, Title, CustomButtonRoot, Image } from "./styles";
 import { useNavigate } from "react-router-dom";
+import { CustomButton } from "~/components/CustomButton";
 
 const NotFound: React.FC = () => {
   const navigate = useNavigate();
@@ -14,7 +15,9 @@ const NotFound: React.FC = () => {
       <Content>
         <Title>Ops, Página não encontrada!</Title>
         <Image />
-        <Button onClick={handleNavigate}>Voltar</Button>
+        <CustomButtonRoot onClick={handleNavigate}>
+          <CustomButton.Content text="Voltar" />
+        </CustomButtonRoot>
       </Content>
     </Container>
   );

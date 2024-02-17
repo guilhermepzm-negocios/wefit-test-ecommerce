@@ -1,9 +1,16 @@
 import React, { useCallback, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { ApplicationState } from "~/store/types";
-import { Container, EmptyContainer, Title, Button, EmptyImage } from "./styles";
+import {
+  Container,
+  EmptyContainer,
+  Title,
+  EmptyImage,
+  CustomButtonRoot,
+} from "./styles";
 import { useNavigate } from "react-router-dom";
-import CartInfo from "~/components/CartInfo";
+import CartInfo from "./CartInfo";
+import { CustomButton } from "~/components/CustomButton";
 
 const Cart: React.FC = () => {
   const navigate = useNavigate();
@@ -21,7 +28,9 @@ const Cart: React.FC = () => {
         <EmptyContainer>
           <Title>Parece que não há nada por aqui :(</Title>
           <EmptyImage />
-          <Button onClick={handleNavigate}>Voltar</Button>
+          <CustomButtonRoot onClick={handleNavigate}>
+            <CustomButton.Content text="Voltar" />
+          </CustomButtonRoot>
         </EmptyContainer>
       ) : (
         <CartInfo cart={cart} />

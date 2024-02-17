@@ -1,5 +1,5 @@
-import { Button as antdButton } from "antd";
 import styled from "styled-components";
+import { CustomButton } from "~/components/CustomButton";
 
 export const DefaultCard = styled.div`
   flex: 0 0 calc(33.333333% - 1rem);
@@ -38,31 +38,17 @@ interface ButtonProps {
   $hasInCart: boolean;
 }
 
-export const Button = styled(antdButton)<ButtonProps>`
+export const CustomButtonRoot = styled(CustomButton.Root)<ButtonProps>`
   background-color: ${(prop) =>
     prop.$hasInCart ? prop.theme.colors.green : prop.theme.colors.secondary};
   color: ${({ theme }) => theme.colors.white};
-  border-radius: 0.25rem;
   width: 100%;
   height: 2.5rem;
-  font-weight: ${({ theme }) => theme.weight.bold};
   font-size: 0.75rem;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   &:hover {
     background-color: ${(prop) =>
       prop.$hasInCart
         ? prop.theme.colors.green
         : prop.theme.colors.secondary} !important;
-    color: ${({ theme }) => theme.colors.white} !important;
   }
-`;
-
-export const Count = styled.span`
-  font-size: 0.75rem;
-  font-weight: ${({ theme }) => theme.weight.regular};
-  padding-right: 0.75rem;
-  padding-left: 0.2125rem;
 `;

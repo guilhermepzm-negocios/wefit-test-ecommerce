@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button as antdButton } from "antd";
+import { CustomButton } from "~/components/CustomButton";
 
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
@@ -65,19 +65,10 @@ export const Price = styled.div`
   margin-right: 1rem;
 `;
 
-export const Button = styled(antdButton)`
-  color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.secondary};
-  border-radius: 0.25rem;
+export const CustomButtonRoot = styled(CustomButton.Root)`
   width: 11.25rem;
   height: 2.5rem;
-  font-weight: ${({ theme }) => theme.weight.bold};
   font-size: 0.875rem;
-  text-transform: uppercase;
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.secondary} !important;
-    color: ${({ theme }) => theme.colors.white} !important;
-  }
 `;
 
 export const List = styled.div`

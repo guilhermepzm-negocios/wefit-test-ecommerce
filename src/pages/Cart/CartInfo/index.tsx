@@ -2,7 +2,6 @@ import React, { useCallback } from "react";
 import { CartModel } from "~/models/CartModel";
 import {
   Bottom,
-  Button,
   Container,
   Fixed,
   Header,
@@ -18,6 +17,8 @@ import CartItem from "./components/CartItem";
 import { useDispatch } from "react-redux";
 import { finishOrderCartRequest } from "~/store/redux/cart/actions";
 import { useNavigate } from "react-router-dom";
+import { CustomButtonRoot } from "../styles";
+import { CustomButton } from "~/components/CustomButton";
 
 interface Props {
   cart: CartModel;
@@ -53,7 +54,9 @@ const CartInfo: React.FC<Props> = ({ cart }: Props) => {
       <Fixed>
         <Line />
         <Bottom>
-          <Button onClick={handleFinishOrder}>Finalizar pedido</Button>
+          <CustomButtonRoot onClick={handleFinishOrder}>
+            <CustomButton.Content text="Finalizar pedido" />
+          </CustomButtonRoot>
           <Row>
             <PriceTitle>total</PriceTitle>
             <Price>{maskedTotalPrice}</Price>
