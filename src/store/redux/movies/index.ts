@@ -19,6 +19,7 @@ const reducer: Reducer<MoviesState> = (
         ...state,
         loading: true,
       };
+
     case MoviesTypes.LIST_MOVIES_SUCCESS: {
       const { data } = action.payload;
       return {
@@ -28,6 +29,7 @@ const reducer: Reducer<MoviesState> = (
         data,
       };
     }
+
     case MoviesTypes.LIST_MOVIES_FAILURE:
       return {
         ...state,
